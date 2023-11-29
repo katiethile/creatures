@@ -19,6 +19,15 @@
                 float:right;
     
             }
+
+            body{
+
+                background-color: coral;
+            }
+
+            div.desc{
+                border: 2px solid black;
+            }
             /*
             div.creature{
                 background-color: yellow;
@@ -29,9 +38,9 @@
     </head>   
     <body>
     <h1>Creatures</h1>
-    <h3>A JavaScript data attributes example by NAME HERE</h3>
+    <h3>A JavaScript data attributes example by KATIE LE</h3>
     <p>This page demonstrates how to use JavaScript data attributes to differentiate data.</p>
-    <p>When you click <b>Show Creature Home</b>, the background color will change color based on their natural environment:
+    <div class="desc"><p>When you click <b>Show Creature Home</b>, the background color will change color based on their natural environment:</div>
     </p> 
     <div>
         <ul>
@@ -41,13 +50,18 @@
         </ul>
     </div>
 
-    <p>When you click <b>Show Creature Type</b>, the border color and style will changed based on the type of creature:</p>
+    <div class="desc"><p>When you click <b>Show Creature Type</b>, the border color and style will changed based on the type of creature:</p></div>
+    
     <div> 
         <ul>
-            <li>animal: soli red</li>
+            <li>animal: solid red</li>
             <li>insect: dashed orange</li>
         </ul>
     </div>
+
+    <div class="desc"><p>When you click on <b>Clear All</b>, everything goes back to how it was before, clearing the border colors and background colors within the borders/boxes.</p></div>
+
+
     <div class="creature" data-home="land" data-creature-type="animal">    
         <img src="images/monkey.png" alt="monkey">
         <h3>Monkey</h3>
@@ -173,7 +187,13 @@
                 clear background color to white
                 
             */
-            alert("clearAll()");
+            const myNodeList = document.querySelectorAll("div.creature");
+
+            myNodeList.forEach(function(el){
+                el.style.backgroundColor = "#fff";
+                el.style.border = "1px solid #000";
+
+            });
         }//end clearAll()
 
     </script>    
